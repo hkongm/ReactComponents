@@ -4,5 +4,9 @@ $baseFontSize:          16px !default;
 $baseLineHeight:        1.5 !default;
 $baseFontFamily:        "Helvetica Neue", Helvetica, Tahoma, sans-serif !default;
 
-$headerBackgroundColor: #ebebeb;
-$headerBorderColor: #ccc;
+$header_Background_Color: #ebebeb;
+$header_Border_Color: #ccc;
+
+$table_Border_Color: #ccc;
+$table_Thead_Background_Color: #ececec;
+$table_Tfoot_Background_Color: $table_Thead_Background_Color;

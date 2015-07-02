@@ -1,0 +1,15 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  td {
+    border: 1px solid $table_Border_Color;
+  }
+  thead {
+    @extend .font-bold;
+    background-color: $table_Thead_Background_Color;
+  }
+  tfoot {
+    @extend .font-bold;
+    background-color: $table_Tfoot_Background_Color;
+  }
+}
