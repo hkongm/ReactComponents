@@ -8,22 +8,21 @@ export default class Select extends React.Component {
    * @return {void}
    */
   changeHandler(e) {
-    // console.info('DemoSelector组件:changeHandler')
-    // this.props.change(e.target.selectedIndex)
     console.info('选择了:' + e.target.selectedIndex)
   }
 
   render() {
-    // console.info('DemoSelector组件:render')
+
+    // 拼出options
+    let options = this.props.data.map((option, idx) => {
+      return <Option key={idx} optionname={option} />
+    })
+
     return (
       <div className="form-select">
         <label>{this.props.labelName}</label>
         <select onChange={this.changeHandler.bind(this)}>
-          {
-            this.props.data.map((option, idx) => {
-              return <Option key={idx} optionname={option} />
-            })
-          }
+          {options}
         </select>
       </div>
     )
