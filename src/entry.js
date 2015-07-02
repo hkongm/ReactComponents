@@ -4,9 +4,10 @@ import Router from 'react-router'
 import Header from './router/Header.jsx'
 import Footer from './router/Footer.jsx'
 
-import Home from './router/Home.jsx'
-import Form from './router/Form.jsx'
-import About from './router/About.jsx'
+import HomeHandler from './router/Home.jsx'
+import FormHandler from './router/Form.jsx'
+import TableHandler from './router/Table.jsx'
+import AboutHandler from './router/About.jsx'
 
 var {
   Route,
@@ -29,9 +30,10 @@ class App extends React.Component {
 var routes = (
   <Route location="history">
     <Route path="/" handler={App}>
-      <Route path="form" name="form" handler={Form}/>
-      <Route path="about" name="about" handler={About}/>
-      <DefaultRoute name="home" handler={Home}/>
+      <Route path="form" name="form" handler={FormHandler}/>
+      <Route path="table" name="table" handler={TableHandler}/>
+      <Route path="about" name="about" handler={AboutHandler}/>
+      <DefaultRoute name="home" handler={HomeHandler}/>
     </Route>
   </Route>
 );
