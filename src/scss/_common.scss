@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+.site-header {
+  background-color: $headerBackgroundColor;
+  border-bottom: 1px solid $headerBorderColor;
+  height: 60px;
+  line-height: 60px;
+  h1 {
+    float: left;
+  }
+  nav {
+    float: right;
+    li {
+      float: left;
+      width: 100px;
+    }
+  }
+}
+
+.site-footer {
+  text-align: center;
+}

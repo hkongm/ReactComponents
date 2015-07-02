@@ -1,6 +1,7 @@
 import React from 'react'
 import Router from 'react-router'
 
+
 require('../scss/main.scss')
 
 var {
@@ -11,10 +12,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <div>
-        <h2>Home hoho</h2>
-        <nav>
-          <Link to="about">关于我</Link>
-        </nav>
+        Home page
       </div>
     )
   }
