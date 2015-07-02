@@ -3,7 +3,9 @@ import Router from 'react-router'
 
 import Header from './router/Header.jsx'
 import Footer from './router/Footer.jsx'
+
 import Home from './router/Home.jsx'
+import Form from './router/Form.jsx'
 import About from './router/About.jsx'
 
 var {
@@ -27,6 +29,7 @@ class App extends React.Component {
 var routes = (
   <Route location="history">
     <Route path="/" handler={App}>
+      <Route path="form" name="form" handler={Form}/>
       <Route path="about" name="about" handler={About}/>
       <DefaultRoute name="home" handler={Home}/>
     </Route>

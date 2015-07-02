@@ -17,6 +17,7 @@ export default class Header extends React.Component {
         <nav>
           <ul>
             <li><Link to="home">首页</Link></li>
+            <li><Link to="form">表单</Link></li>
             <li><Link to="about">关于我</Link></li>
           </ul>
         </nav>
