@@ -16,6 +16,10 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: 'react-hot!babel'
+      },
+      {
+        test: /\.scss$/,
+        loader: "style!css!sass?sourceMap"
       }
     ]
   },
