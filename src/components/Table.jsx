@@ -15,7 +15,9 @@ export default class Select extends React.Component {
       <table className="table">
         <caption>{this.props.captionName}</caption>
         <Thead data={this.props.thead}/>
-        {trs}
+        <tbody>
+          {trs}
+        </tbody>
         <Tfoot data={this.props.tfoot}/>
       </table>
     )

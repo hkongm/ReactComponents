@@ -1,8 +1,13 @@
 .table {
-  width: 100%;
+  width: 80%;
+  @extend .box-center;
   border-collapse: collapse;
+  tbody > tr:nth-child(even) {
+    background-color: lighten($table_Thead_Background_Color, 1%);
+  }
   td {
     border: 1px solid $table_Border_Color;
+    padding: .5em;
   }
   thead {
     @extend .font-bold;
