@@ -6,13 +6,22 @@ import Tr from './sub/Tr.jsx'
 export default class Select extends React.Component {
 
   render() {
+
+    // 生成表格的主Class，判断风格类型
+    let tableClass = 'table '
+    if (this.props.type) {
+      tableClass += this.props.theme
+    } else {
+      tableClass += 'normal'
+    }
+
     // 生成表格的若干TR
     let trs = this.props.result.map((trData, key) => {
       return <Tr key={key} trData={trData} />
     })
 
     return (
-      <table className="table">
+      <table className={tableClass}>
         <caption>{this.props.captionName}</caption>
         <Thead data={this.props.thead}/>
         <tbody>

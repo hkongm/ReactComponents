@@ -4,6 +4,7 @@ import Table from '../components/Table.jsx'
 
 let data = {
   captionName : '表格名字',
+  theme : 'business',
   thead : ['head1', 'head2', 'head3'],
   tfoot : ['foot1', 'foot2', 'foot3'],
   result : [

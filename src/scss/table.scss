@@ -2,19 +2,28 @@
   width: 80%;
   @extend .box-center;
   border-collapse: collapse;
-  tbody > tr:nth-child(even) {
-    background-color: lighten($table_Thead_Background_Color, 1%);
-  }
   td {
-    border: 1px solid $table_Border_Color;
+    border: 1px solid ;
     padding: .5em;
   }
-  thead {
-    @extend .font-bold;
-    background-color: $table_Thead_Background_Color;
-  }
+  thead,
   tfoot {
     @extend .font-bold;
-    background-color: $table_Tfoot_Background_Color;
+  }
+  @each $theme, $tab_bd_color, $tab_thead_bgcolor, $tab_tfoot_bgcolor in $table_Theme_List {
+    &.#{$theme} {
+      tbody > tr:nth-child(even) {
+        background-color: lighten($tab_thead_bgcolor, 1%);
+      }
+      td {
+        border-color: $tab_bd_color;
+      }
+      thead {
+        background-color: $tab_thead_bgcolor;
+      }
+      tfoot {
+        background-color: $tab_tfoot_bgcolor;
+      }
+    }
   }
 }
