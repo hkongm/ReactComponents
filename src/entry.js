@@ -1,13 +1,13 @@
 import React from 'react'
 import Router from 'react-router'
 
-import Header from './router/Header.jsx'
-import Footer from './router/Footer.jsx'
+import Header from './page/Header.jsx'
+import Footer from './page/Footer.jsx'
 
-import HomeHandler from './router/Home.jsx'
-import FormHandler from './router/Form.jsx'
-import TableHandler from './router/Table.jsx'
-import AboutHandler from './router/About.jsx'
+import HomeHandler from './page/Home.jsx'
+import FormHandler from './page/Form.jsx'
+import TableHandler from './page/Table.jsx'
+import AboutHandler from './page/About.jsx'
 
 var {
   Route,
