@@ -8,7 +8,7 @@ export default class Select extends React.Component {
    * @return {void}
    */
   changeHandler(e) {
-    console.info('选择了:' + e.target.selectedIndex)
+    this.props.change(e.target.value);
   }
 
   render() {
