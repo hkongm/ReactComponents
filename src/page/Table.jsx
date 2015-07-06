@@ -41,13 +41,15 @@ export default class Home extends React.Component {
       tableData : tmp
     })
   }
-  
+
   render() {
     return (
       <dl>
         <dt>Table控件</dt>
         <dd>
-          <Select {...selectData} change={this.changeTheme.bind(this)} />
+          <Select
+            {...selectData}
+            change={this.changeTheme.bind(this)} />
           <Table {...this.state.tableData} />
         </dd>
       </dl>
