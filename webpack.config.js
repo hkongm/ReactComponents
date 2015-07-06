@@ -11,9 +11,9 @@ module.exports = {
     SOURCE_FOLDER + 'index.js'
   ],
   output: {
-    path: DIST_FOLDER + 'assets/',
+    path: DIST_FOLDER + '/assets/',
     filename: BUNDLE_NAME,
-    publicPath : '/assets/'
+    publicPath : '/dist/assets/'
   },
   module: {
     loaders: [
