@@ -1,14 +1,19 @@
 var webpack = require('webpack');
 
+var SOURCE_FOLDER = __dirname + '/src/';
+var DIST_FOLDER = __dirname + '/dist/';
+var BUNDLE_NAME = 'bundle.js';
+
 module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
-    './src/entry.js'
+    SOURCE_FOLDER + 'index.js'
   ],
   output: {
-    path: __dirname,
-    filename: "bundle.js"
+    path: DIST_FOLDER + 'assets/',
+    filename: BUNDLE_NAME,
+    publicPath : '/assets/'
   },
   module: {
     loaders: [
