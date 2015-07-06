@@ -6,10 +6,9 @@ import Tr from './sub/Tr.jsx'
 export default class Select extends React.Component {
 
   render() {
-
     // 生成表格的主Class，判断风格类型
     let tableClass = 'table '
-    if (this.props.type) {
+    if (this.props.theme) {
       tableClass += this.props.theme
     } else {
       tableClass += 'normal'

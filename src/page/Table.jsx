@@ -1,10 +1,11 @@
 import React from 'react'
 
 import Table from '../components/Table.jsx'
+import Select from '../components/Select.jsx'
 
 let data = {
   captionName : '表格名字',
-  theme : 'business',
+  theme: 'normal',
   thead : ['head1', 'head2', 'head3'],
   tfoot : ['foot1', 'foot2', 'foot3'],
   result : [
@@ -14,12 +15,41 @@ let data = {
   ]
 }
 
+let selectData = {
+  labelName : '表格风格选择',
+  data : ['normal', 'business']
+}
+
 export default class Home extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      tableData : data
+    }
+  }
+
+  /**
+   * 改变主题的回调
+   * @param  {String} Select的选择值
+   * @return {void}
+   */
+  changeTheme(v) {
+    let tmp = this.state.tableData
+    tmp.theme = v
+    this.setState({
+      tableData : tmp
+    })
+  }
+  
   render() {
     return (
       <dl>
         <dt>Table控件</dt>
-        <dd><Table {...data} /></dd>
+        <dd>
+          <Select {...selectData} change={this.changeTheme.bind(this)} />
+          <Table {...this.state.tableData} />
+        </dd>
       </dl>
     )
   }
