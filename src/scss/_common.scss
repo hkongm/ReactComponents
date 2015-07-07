@@ -3,6 +3,11 @@
 @include pull(left);
 @include pull(right);
 
+.center-box {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 // .pull-left {
 //   float: left;
 // }

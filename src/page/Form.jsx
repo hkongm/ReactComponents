@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Select from '../components/Select.jsx'
+import Input from '../components/Input.jsx'
 
 let selectData = {
   labelName : 'label名字',
@@ -13,6 +14,8 @@ export default class Home extends React.Component {
       <dl>
         <dt>Select控件</dt>
         <dd><Select {...selectData} /></dd>
+        <dt>Input控件</dt>
+        <dd><Input /></dd>
       </dl>
     )
   }

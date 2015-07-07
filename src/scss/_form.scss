@@ -1,0 +1,20 @@
+.form-select {
+
+}
+
+.form-input {
+  input {
+    width: 100%;
+  }
+  .tip {
+    float: right;
+    font-size: .8em;
+    color: grey;
+    &.valid {
+      color: green;
+    }
+    &.unvalid {
+      color: red;
+    }
+  }
+}

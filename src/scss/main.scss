@@ -8,3 +8,9 @@
 
 
 @import "table.scss";
+@import "form.scss";
+
+dl {
+  width: 80%;
+  @extend .center-box;
+}
