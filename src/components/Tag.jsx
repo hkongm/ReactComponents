@@ -5,8 +5,14 @@ export default class Tag extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      tags : ['abc','xyz']
+      tags : []
     }
+  }
+
+  componentDidMount() {
+    this.setState({
+      tags : this.props.data
+    })
   }
 
   submitHander(e) {

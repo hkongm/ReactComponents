@@ -1,3 +1,30 @@
+@charset "UTF-8";
+
+// input单独一行样式
+.input-box {
+  input,
+  button {
+    color: $form_text_Color;
+    height: 30px;
+    border: 1px solid $form_Border_Color;
+    box-sizing: border-box;
+  }
+  input {
+    text-indent: 4px;
+  }
+  .input-group-addon {
+    color: $form_text_Color;
+    background-color: $form_InputAddon_Background_Color;
+    &:first-child {
+      border-right: 0;
+    }
+    &:last-child {
+      border-left: 0;
+    }
+  }
+}
+
+
 .form-select {
 
 }

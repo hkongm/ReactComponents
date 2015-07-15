@@ -7,6 +7,14 @@ $baseFontFamily:        "Helvetica Neue", Helvetica, Tahoma, sans-serif !default
 $header_Background_Color: #ebebeb;
 $header_Border_Color: #ccc;
 
+$form_text_Color : #333;
+$form_Border_Color : #ccc;
+$form_InputAddon_Background_Color : #ddd;
+
+$misc_Tag_Background_Color : #eee;
+$misc_Tag_Border_Color : #ddd;
+$misc_Tag_Text_Color : $form_text_Color;
+
 // $table_Border_Color: #ccc;
 // $table_Thead_Background_Color: #ececec;
 // $table_Tfoot_Background_Color: $table_Thead_Background_Color;

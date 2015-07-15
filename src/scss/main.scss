@@ -6,41 +6,12 @@
 
 @import "common.scss";
 
+@import "form.scss";
 
 @import "table.scss";
-@import "form.scss";
+@import "tags.scss";
 
 dl {
   width: 80%;
   @extend .center-box;
-}
-
-.tags {
-  color: #fff;
-  .tag {
-    display: inline-block;
-    padding: 3px 6px;
-    background-color: blue;
-  }
-  .clear {
-    display: inline-block;
-    padding: 0 5px;
-    background: red;
-  }
-  input,
-  button {
-    color: #333;
-    height: 30px;
-    border: 1px solid #999;
-  }
-  .input-group-addon {
-    color: #333;
-    background-color: #ccc;
-    &:first-child {
-      border-right: 0;
-    }
-    &:last-child {
-      border-left: 0;
-    }
-  }
 }
