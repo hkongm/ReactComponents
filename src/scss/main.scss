@@ -27,4 +27,20 @@ dl {
     padding: 0 5px;
     background: red;
   }
+  input,
+  button {
+    color: #333;
+    height: 30px;
+    border: 1px solid #999;
+  }
+  .input-group-addon {
+    color: #333;
+    background-color: #ccc;
+    &:first-child {
+      border-right: 0;
+    }
+    &:last-child {
+      border-left: 0;
+    }
+  }
 }
