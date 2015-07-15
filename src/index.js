@@ -7,6 +7,7 @@ import Footer from './page/Footer.jsx'
 import HomeHandler from './page/Home.jsx'
 import FormHandler from './page/Form.jsx'
 import TableHandler from './page/Table.jsx'
+import MiscHandler from './page/Misc.jsx'
 import AboutHandler from './page/About.jsx'
 
 var {
@@ -32,6 +33,7 @@ var routes = (
     <Route path="/" handler={App}>
       <Route path="form" name="form" handler={FormHandler}/>
       <Route path="table" name="table" handler={TableHandler}/>
+      <Route path="misc" name="misc" handler={MiscHandler}/>
       <Route path="about" name="about" handler={AboutHandler}/>
       <DefaultRoute name="home" handler={HomeHandler}/>
     </Route>

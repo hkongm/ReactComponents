@@ -14,3 +14,17 @@ dl {
   width: 80%;
   @extend .center-box;
 }
+
+.tags {
+  color: #fff;
+  .tag {
+    display: inline-block;
+    padding: 3px 6px;
+    background-color: blue;
+  }
+  .clear {
+    display: inline-block;
+    padding: 0 5px;
+    background: red;
+  }
+}
