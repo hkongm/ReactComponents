@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.search-box {
+  $tabHighlight: blue;
+  .tab-bar {
+    li {
+      float: left;
+      width: 20%;
+      &.active {
+        color: $tabHighlight;
+      }
+    }
+  }
+}
