@@ -4,11 +4,34 @@
   $tabHighlight: blue;
   .tab-bar {
     li {
-      float: left;
+      display: inline-block;
       width: 20%;
       &.active {
         color: $tabHighlight;
       }
+    }
+  }
+
+  .input-box {
+    $btnWidth: 40px;
+    position: relative;
+    border: 1px solid #ccc;
+    input {
+      width: calc(100% - #{$btnWidth});
+      border: none;
+      &:focus {
+        outline: none;
+      }
+    }
+    i {
+      position: absolute;
+      right: $btnWidth + 5px;
+      top: 0;
+    }
+    button {
+      float: right;
+      width: $btnWidth;
+      border: none;
     }
   }
 }

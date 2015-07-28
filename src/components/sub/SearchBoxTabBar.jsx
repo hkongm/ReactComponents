@@ -2,32 +2,21 @@ import React from 'react'
 
 export default class TabBar extends React.Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      activeIndex : 0
-    }
-  }
+  // constructor(props) {
+  //   super(props)
+  // }
 
   setCategoryActive(e) {
     let index = e.target.dataset.index
     this.props.onTabChange(index)
-    this.setState({
-      activeIndex : index
-    })
-  }
-
-  componentDidMount() {
-    this.setState({
-      activeIndex : this.props.activeIndex
-    })
   }
 
   render() {
     // 生成每个标签
+    let activeIndex = this.props.activeIndex
     let abc = this.props.category.map((item, index) => {
       return (
-        <li className={index == this.state.activeIndex ? 'active' : ''}
+        <li className={index == activeIndex ? 'active' : ''}
             key={index}
             data-index={index}
             data-url={item.url}

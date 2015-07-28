@@ -1,11 +1,13 @@
 import React from 'react'
 import TabBar from './sub/SearchBoxTabBar.jsx'
+import InputBox from './sub/SearchBoxInputBox.jsx'
 
 export default class SearchBox extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
+      keyword : '',
       activeIndex : 0,
       category : [
         {
@@ -28,6 +30,28 @@ export default class SearchBox extends React.Component {
           name : '找车',
           url : ''
         }
+      ],
+      listData : [
+        {
+          name : '直达名字1',
+          wordid : 3531,
+          tiptype : 1
+        },
+        {
+          name : '直达名字2',
+          wordid : 3531,
+          tiptype : 1
+        },
+        {
+          name : '综合名字1',
+          wordid : 3531,
+          tiptype : 2
+        },
+        {
+          name : '综合名字2',
+          wordid : 3531,
+          tiptype : 2
+        }
       ]
     }
   }
@@ -39,37 +63,31 @@ export default class SearchBox extends React.Component {
     })
   }
 
+  // 改变State中的搜索关键字
+  setKeyword(text) {
+    if (text == null) text = ''
+    this.setState({
+      keyword : text
+    })
+  }
+
   render() {
     console.info('SearchBox Rendered.')
+    console.dir(this.state)
     return (
       <div className="search-box">
-        <TabBar {...this.state} onTabChange={this.setCategoryActive.bind(this)} />
-        <InputBox />
-        <SuggestList />
+        <TabBar
+          category={this.state.category}
+          activeIndex={this.state.activeIndex}
+          onTabChange={this.setCategoryActive.bind(this)} />
+        <InputBox onKeywordChange={this.setKeyword.bind(this)} />
+        <SuggestList listdata={this.state.listData} />
         <Button />
       </div>
     )
   }
 }
 
-
-
-class InputBox extends React.Component {
-
-  // constructor(props) {
-  //   super(props)
-  // }
-
-  render() {
-    return (
-      <div className="input-box">
-        <input placeholder="请输入" />
-        <i className="clearinput">X</i>
-        <button>Go</button>
-      </div>
-    )
-  }
-}
 
 class SuggestList extends React.Component {
 
@@ -79,6 +97,17 @@ class SuggestList extends React.Component {
         <Shortcut />
         <Result />
       </div>
+    )
+  }
+}
+
+class ListItem extends React.Component {
+
+  render() {
+    return (
+      <ul>
+        <li></li>
+      </ul>
     )
   }
 }
