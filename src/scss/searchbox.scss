@@ -2,6 +2,19 @@
 
 .search-box {
   $tabHighlight: blue;
+
+  .clearfix::after {
+    clear:both;
+    content:"";
+    display: block;
+  }
+
+  .btn {
+    padding: 5px 10px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+  }
+
   .tab-bar {
     li {
       display: inline-block;
@@ -32,6 +45,15 @@
       float: right;
       width: $btnWidth;
       border: none;
+    }
+  }
+
+  .btn-box {
+    .clear-history {
+      float: left;
+    }
+    .close-list {
+      float: right;
     }
   }
 }

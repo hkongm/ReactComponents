@@ -2,6 +2,7 @@ import React from 'react'
 import TabBar from './sub/SearchBoxTabBar.jsx'
 import InputBox from './sub/SearchBoxInputBox.jsx'
 import SuggestList from './sub/SearchBoxSuggestList.jsx'
+import Buttons from './sub/SearchBoxButtons.jsx'
 
 export default class SearchBox extends React.Component {
 
@@ -72,6 +73,18 @@ export default class SearchBox extends React.Component {
     })
   }
 
+  // componentDidMount() {
+  //   $.get(this.props.source, function(result) {
+  //     var lastGist = result[0];
+  //     if (this.isMounted()) {
+  //       this.setState({
+  //         username: lastGist.owner.login,
+  //         lastGistUrl: lastGist.html_url
+  //       });
+  //     }
+  //   }.bind(this));
+  // }
+
   render() {
     console.info('SearchBox Rendered.')
     return (
@@ -80,22 +93,11 @@ export default class SearchBox extends React.Component {
           category={this.state.category}
           activeIndex={this.state.activeIndex}
           onTabChange={this.setCategoryActive.bind(this)} />
-        <InputBox onKeywordChange={this.setKeyword.bind(this)} />
-        <SuggestList listdata={this.state.listData} />
-        <Button />
-      </div>
-    )
-  }
-}
-
-
-
-class Button extends React.Component {
-
-  render() {
-    return (
-      <div className="btn-box">
-        <div className="btn">我是按钮</div>
+        <InputBox
+          onKeywordChange={this.setKeyword.bind(this)} />
+        <SuggestList
+          listdata={this.state.listData} />
+        <Buttons />
       </div>
     )
   }

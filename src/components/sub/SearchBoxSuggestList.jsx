@@ -27,8 +27,8 @@ export default class SuggestList extends React.Component {
 class ListItem extends React.Component {
 
   render() {
-    let lis = this.props.list.map((item)=>{
-      return (<li>{item.name}<i>+</i></li>)
+    let lis = this.props.list.map((item, index)=>{
+      return (<li key={index}>{item.name}<i>+</i></li>)
     })
 
     return (
