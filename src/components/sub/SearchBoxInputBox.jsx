@@ -23,6 +23,8 @@ export default class InputBox extends React.Component {
         <input
            ref="input"
            placeholder="请输入"
+           name="q"
+           autoComplete="off"
            onInput={this.inputHandler.bind(this)}
         />
         <i className="clearinput"

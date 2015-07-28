@@ -1,6 +1,11 @@
 import React from 'react'
+import Buttons from './SearchBoxButtons.jsx'
 
 export default class SuggestList extends React.Component {
+
+  closeSuggestList() {
+    this.props.closeSuggestList()
+  }
 
   render() {
 
@@ -15,10 +20,14 @@ export default class SuggestList extends React.Component {
       return item.tiptype === 2
     })
 
+    // 是否显示结果列表
+    let className = this.props.isshow ? 'suggest-list' : 'suggest-list hidden'
     return (
-      <div className="suggest-list">
+      <div className={className}>
         <Shortcut list={shortcutData} />
         <General list={generalData} />
+        <Buttons
+          closeSuggestList={this.closeSuggestList.bind(this)}/>
       </div>
     )
   }

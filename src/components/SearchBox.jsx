@@ -2,35 +2,45 @@ import React from 'react'
 import TabBar from './sub/SearchBoxTabBar.jsx'
 import InputBox from './sub/SearchBoxInputBox.jsx'
 import SuggestList from './sub/SearchBoxSuggestList.jsx'
-import Buttons from './sub/SearchBoxButtons.jsx'
+
+const SITE_URL = '//sou.m.autohome.com.cn/'
+const API_PREFIX = 'api/'
+const API_SUFFIX = '/search?q='
 
 export default class SearchBox extends React.Component {
 
   constructor(props) {
     super(props)
+
     this.state = {
       keyword : '',
       activeIndex : 0,
+      isShowList : true,
       category : [
         {
           name : '综合',
-          url : ''
+          action : 'zonghe',
+          api : 'Suggestword'
         },
         {
           name : '文章',
-          url : ''
+          action : 'wenzhang',
+          api : 'Suggestword'
         },
         {
           name : '论坛',
-          url : ''
+          action : 'luntan',
+          api : 'TopicSuggestword'
         },
         {
           name : '视频',
-          url : ''
+          action : 'shipin',
+          api : 'VideoSuggestword'
         },
         {
           name : '找车',
-          url : ''
+          action : 'zhaoche',
+          api : ''
         }
       ],
       listData : [
@@ -73,6 +83,13 @@ export default class SearchBox extends React.Component {
     })
   }
 
+  closeSuggestList() {
+    this.setState({
+      isShowList : false
+    })
+  }
+
+
   // componentDidMount() {
   //   $.get(this.props.source, function(result) {
   //     var lastGist = result[0];
@@ -87,8 +104,13 @@ export default class SearchBox extends React.Component {
 
   render() {
     console.info('SearchBox Rendered.')
+
+    // 计算当前form的action
+    let actionURL = SITE_URL + this.state.category[this.state.activeIndex].action
+
     return (
       <div className="search-box">
+        <form method="get" action={actionURL} ref="form">
         <TabBar
           category={this.state.category}
           activeIndex={this.state.activeIndex}
@@ -96,8 +118,10 @@ export default class SearchBox extends React.Component {
         <InputBox
           onKeywordChange={this.setKeyword.bind(this)} />
         <SuggestList
-          listdata={this.state.listData} />
-        <Buttons />
+          isshow={this.state.isShowList}
+          listdata={this.state.listData}
+          closeSuggestList={this.closeSuggestList.bind(this)} />
+        </form>
       </div>
     )
   }
