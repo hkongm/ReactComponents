@@ -1,6 +1,7 @@
 import React from 'react'
 import TabBar from './sub/SearchBoxTabBar.jsx'
 import InputBox from './sub/SearchBoxInputBox.jsx'
+import SuggestList from './sub/SearchBoxSuggestList.jsx'
 
 export default class SearchBox extends React.Component {
 
@@ -73,7 +74,6 @@ export default class SearchBox extends React.Component {
 
   render() {
     console.info('SearchBox Rendered.')
-    console.dir(this.state)
     return (
       <div className="search-box">
         <TabBar
@@ -89,50 +89,6 @@ export default class SearchBox extends React.Component {
 }
 
 
-class SuggestList extends React.Component {
-
-  render() {
-    return (
-      <div className="suggest-list">
-        <Shortcut />
-        <Result />
-      </div>
-    )
-  }
-}
-
-class ListItem extends React.Component {
-
-  render() {
-    return (
-      <ul>
-        <li></li>
-      </ul>
-    )
-  }
-}
-
-class Shortcut extends React.Component {
-
-  render() {
-    return (
-      <div className="shortcut">
-        shortcut list
-      </div>
-    )
-  }
-}
-
-class Result extends React.Component {
-
-  render() {
-    return (
-      <div className="result">
-        result list
-      </div>
-    )
-  }
-}
 
 class Button extends React.Component {
 
