@@ -8,8 +8,8 @@ export default class SuggestList extends React.Component {
   }
 
   render() {
-
-    let result = this.props.listdata
+    let stateData = this.props.state
+    let result = stateData.listData
 
     // 过滤出直达和综合搜索的数据，用两个数组分开承载
     let shortcutData = result.filter((item)=>{
@@ -20,12 +20,19 @@ export default class SuggestList extends React.Component {
       return item.tiptype === 2
     })
 
+    let categoryName = stateData.category[stateData.activeIndex].name
+
     // 是否显示结果列表
-    let className = this.props.isshow ? 'suggest-list' : 'suggest-list hidden'
+    let className = stateData.isShowList ? 'suggest-list' : 'suggest-list hidden'
+
     return (
       <div className={className}>
-        <Shortcut list={shortcutData} />
-        <General list={generalData} />
+        <Shortcut
+          list={shortcutData}
+          categoryName={categoryName} />
+        <General
+          list={generalData}
+          categoryName={categoryName} />
         <Buttons
           closeSuggestList={this.closeSuggestList.bind(this)}/>
       </div>
@@ -51,10 +58,15 @@ class ListItem extends React.Component {
 class Shortcut extends React.Component {
 
   render() {
+    // 如果没有数据传入，返回空
+    if (this.props.list.length === 0) return <div/>
+
+    let title = this.props.categoryName
+    if (title === '综合' || title === '文章') title = '车系'
 
     return (
       <div className="shortcut">
-        直达
+        直达{title}
         <ListItem list={this.props.list} />
       </div>
     )
@@ -64,9 +76,14 @@ class Shortcut extends React.Component {
 class General extends React.Component {
 
   render() {
+    // 如果没有数据传入，返回空
+    if (this.props.list.length === 0) return <div/>
+
+    let title = this.props.categoryName
+
     return (
       <div className="general">
-        综合搜索
+        {title}搜索
         <ListItem list={this.props.list} />
       </div>
     )

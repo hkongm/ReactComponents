@@ -79,12 +79,13 @@ export default class SearchBox extends React.Component {
   // 改变State中的搜索关键字
   setKeyword(text) {
     console.info('setKeyword')
-    if (text == null) text = ''
+
+    let keyword = text || ''
 
     // 拼jsonp的请求串
     let requestURL = SITE_URL + API_PREFIX
     requestURL += this.state.category[this.state.activeIndex].api
-    requestURL += API_SUFFIX + text
+    requestURL += API_SUFFIX + keyword
 
     JSONP(requestURL, {}, (err, data) => {
       if (data.returncode !== 0) return
@@ -96,6 +97,9 @@ export default class SearchBox extends React.Component {
         listData : list
       })
     })
+    // this.setState({
+    //   keyword : text
+    // })
   }
 
   closeSuggestList() {
@@ -133,8 +137,10 @@ export default class SearchBox extends React.Component {
         <InputBox
           onKeywordChange={this.setKeyword.bind(this)} />
         <SuggestList
-          isshow={this.state.isShowList}
-          listdata={this.state.listData}
+          // isshow={this.state.isShowList}
+          // listdata={this.state.listData}
+          // categoryName={}
+          state={this.state}
           closeSuggestList={this.closeSuggestList.bind(this)} />
         </form>
       </div>
