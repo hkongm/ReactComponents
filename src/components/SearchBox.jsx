@@ -1,3 +1,4 @@
+import JSONP from 'jsonp'
 import React from 'react'
 import TabBar from './sub/SearchBoxTabBar.jsx'
 import InputBox from './sub/SearchBoxInputBox.jsx'
@@ -77,9 +78,23 @@ export default class SearchBox extends React.Component {
 
   // 改变State中的搜索关键字
   setKeyword(text) {
+    console.info('setKeyword')
     if (text == null) text = ''
-    this.setState({
-      keyword : text
+
+    // 拼jsonp的请求串
+    let requestURL = SITE_URL + API_PREFIX
+    requestURL += this.state.category[this.state.activeIndex].api
+    requestURL += API_SUFFIX + text
+
+    JSONP(requestURL, {}, (err, data) => {
+      if (data.returncode !== 0) return
+      let list = data.result
+
+      // 请求结果塞到state的listData中
+      this.setState({
+        keyword : text,
+        listData : list
+      })
     })
   }
 
