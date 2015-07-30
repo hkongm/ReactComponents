@@ -2,6 +2,9 @@
 
 .search-box {
   $tabHighlight: blue;
+  $inputSearchBtnTextcolor: #fff;
+  $inputSearchBtnBgcolor: green;
+  $listBgColor: #efefef;
 
   .clearfix::after {
     clear:both;
@@ -13,18 +16,23 @@
     display: none;
   }
 
-  .btn {
-    padding: 5px 10px;
-    background-color: #eee;
-    border: 1px solid #ccc;
-  }
-
   .tab-bar {
+    margin: 5px 0;
     li {
       display: inline-block;
-      width: 20%;
+      position: relative;
+      padding: 2px 15px;
       &.active {
         color: $tabHighlight;
+        &::after {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          background-color: $tabHighlight;
+          content:"";
+        }
       }
     }
   }
@@ -43,16 +51,49 @@
     i {
       position: absolute;
       right: $btnWidth + 5px;
-      top: 0;
+      top: 5px;
+      width: 20px;
+      height: 20px;
+      background: #ccc;
+      text-align: center;
+      border-radius: 50%;
     }
     button {
       float: right;
       width: $btnWidth;
       border: none;
+      color: $inputSearchBtnTextcolor;
+      background-color: $inputSearchBtnBgcolor;
     }
+  }
+  .suggest-list {
+    background-color: $listBgColor;
+    border: 1px solid #ccc;
+    border-top: none;
+    .title {
+      padding: 5px;
+      font-weight: bold;
+      background-color: darken($listBgColor, 10%);
+    }
+    li {
+      padding: 5px;
+      &:nth-child(odd) {
+        background-color: lighten($listBgColor, 10%);
+      }
+    }
+    .shortcut {}
+    .general {}
+
   }
 
   .btn-box {
+    padding: 5px;
+    background-color: #fff;
+    .btn {
+      padding: 1px 10px;
+      background-color: #eee;
+      border: 1px solid #ccc;
+    }
     .clear-history {
       float: left;
     }

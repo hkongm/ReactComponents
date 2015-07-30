@@ -84,7 +84,7 @@ class Shortcut extends React.Component {
 
     return (
       <div className="shortcut">
-        直达{title}
+        <div className="title">直达{title}</div>
         <ListItem list={this.props.list} />
       </div>
     )
@@ -101,7 +101,7 @@ class General extends React.Component {
 
     return (
       <div className="general">
-        {title}搜索
+        <div className="title">{title}搜索</div>
         <ListItem list={this.props.list} />
       </div>
     )
