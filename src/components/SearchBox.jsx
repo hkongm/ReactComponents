@@ -94,12 +94,10 @@ export default class SearchBox extends React.Component {
       // 请求结果塞到state的listData中
       this.setState({
         keyword : text,
-        listData : list
+        listData : list,
+        isShowList : list.length !== 0 ? true : false
       })
     })
-    // this.setState({
-    //   keyword : text
-    // })
   }
 
   closeSuggestList() {
