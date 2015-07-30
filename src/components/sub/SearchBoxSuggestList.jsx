@@ -19,22 +19,40 @@ export default class SuggestList extends React.Component {
     let generalData = result.filter((item)=>{
       return item.tiptype === 2
     })
-
+    // 分类标题
     let categoryName = stateData.category[stateData.activeIndex].name
 
     // 是否显示结果列表
     let className = stateData.isShowList ? 'suggest-list' : 'suggest-list hidden'
 
-    return (
-      <div className={className}>
+    // 根据列表数据判断两个列表和下面按钮是否出现
+    let short, general, btn
+
+    if (shortcutData.length !== 0) {
+      short =
         <Shortcut
           list={shortcutData}
           categoryName={categoryName} />
+    }
+
+    if (generalData.length !== 0) {
+      general =
         <General
           list={generalData}
           categoryName={categoryName} />
+    }
+
+    if (shortcutData.length !== 0 || generalData.length !== 0) {
+      btn =
         <Buttons
           closeSuggestList={this.closeSuggestList.bind(this)}/>
+    }
+
+    return (
+      <div className={className}>
+        {short}
+        {general}
+        {btn}
       </div>
     )
   }
