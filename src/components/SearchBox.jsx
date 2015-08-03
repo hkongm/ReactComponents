@@ -1,5 +1,6 @@
 import JSONP from 'jsonp'
 import React from 'react'
+import Base from './Base.jsx'
 import TabBar from './sub/SearchBoxTabBar.jsx'
 import InputBox from './sub/SearchBoxInputBox.jsx'
 import SuggestList from './sub/SearchBoxSuggestList.jsx'
@@ -8,7 +9,7 @@ const SITE_URL = '//sou.m.autohome.com.cn/'
 const API_PREFIX = 'api/'
 const API_SUFFIX = '/search?q='
 
-export default class SearchBox extends React.Component {
+export default class SearchBox extends Base {
 
   constructor(props) {
     super(props)
@@ -71,6 +72,7 @@ export default class SearchBox extends React.Component {
 
   // 改变State中的激活类别
   setCategoryActive(index) {
+    this.info('SearchBox:setCategoryActive')
     this.setState({
       activeIndex : index
     })
@@ -78,7 +80,7 @@ export default class SearchBox extends React.Component {
 
   // 改变State中的搜索关键字
   setKeyword(text) {
-    console.info('setKeyword')
+    this.info('SearchBox:setKeyword')
 
     let keyword = text || ''
 
@@ -101,6 +103,7 @@ export default class SearchBox extends React.Component {
   }
 
   closeSuggestList() {
+    this.info('SearchBox:closeSuggestList')
     this.setState({
       isShowList : false
     })
@@ -120,7 +123,7 @@ export default class SearchBox extends React.Component {
   // }
 
   render() {
-    console.info('SearchBox Rendered.')
+    this.info('TabBar:rendered')
 
     // 计算当前form的action
     let actionURL = SITE_URL + this.state.category[this.state.activeIndex].action

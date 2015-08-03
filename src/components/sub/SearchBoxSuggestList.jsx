@@ -1,13 +1,20 @@
 import React from 'react'
+import Base from '../Base.jsx'
 import Buttons from './SearchBoxButtons.jsx'
 
-export default class SuggestList extends React.Component {
+export default class SuggestList extends Base {
+
+  constructor(props) {
+    super(props)
+  }
 
   closeSuggestList() {
+    this.info('SuggestList:closeSuggestList')
     this.props.closeSuggestList()
   }
 
   render() {
+    this.info('SuggestList:rendered')
     let stateData = this.props.state
     let result = stateData.listData
 
@@ -58,9 +65,10 @@ export default class SuggestList extends React.Component {
   }
 }
 
-class ListItem extends React.Component {
+class ListItem extends Base {
 
   render() {
+    this.info('SuggestList_ListItem:rendered')
     let lis = this.props.list.map((item, index)=>{
       return (<li key={index}>{item.name}<i>+</i></li>)
     })
@@ -73,9 +81,10 @@ class ListItem extends React.Component {
   }
 }
 
-class Shortcut extends React.Component {
+class Shortcut extends Base {
 
   render() {
+    this.info('SuggestList_Shortcut:rendered')
     // 如果没有数据传入，返回空
     if (this.props.list.length === 0) return <div/>
 
@@ -91,9 +100,10 @@ class Shortcut extends React.Component {
   }
 }
 
-class General extends React.Component {
+class General extends Base {
 
   render() {
+    this.info('SuggestList_General:rendered')
     // 如果没有数据传入，返回空
     if (this.props.list.length === 0) return <div/>
 

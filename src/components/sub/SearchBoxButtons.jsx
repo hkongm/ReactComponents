@@ -1,12 +1,18 @@
 import React from 'react'
+import Base from '../Base.jsx'
 
-export default class Buttons extends React.Component {
+export default class Buttons extends Base {
+
+  constructor(props) {
+    super(props)
+  }
 
   closeList() {
     this.props.closeSuggestList()
   }
 
   render() {
+    this.info('Buttons:rendered')
     return (
       <div className="btn-box clearfix">
         <div className="btn clear-history">清除历史纪录</div>

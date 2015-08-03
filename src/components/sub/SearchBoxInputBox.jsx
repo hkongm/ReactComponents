@@ -1,23 +1,29 @@
 import React from 'react'
+import Base from '../Base.jsx'
 
-export default class InputBox extends React.Component {
+export default class InputBox extends Base {
+
+  constructor(props) {
+    super(props)
+  }
 
   // 输入事件回调
   inputHandler(e) {
-    console.info('Input:inputHandler')
+    this.info('InputBox:inputHandler')
     let keyword = e.target.value
     this.props.onKeywordChange(keyword)
   }
 
   // 清空输入值
   clearInput() {
-    console.info('Input:clearInput')
+    this.info('InputBox:clearInput')
     // 在refs中找到input清空
     this.refs.input.getDOMNode().value=''
     this.props.onKeywordChange()
   }
 
   render() {
+    this.info('InputBox:rendered')
     return (
       <div className="input-box">
         <input
