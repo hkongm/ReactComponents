@@ -1,0 +1,11 @@
+.interactive-table {
+  $borderColor: #ccc;
+  td {
+    height: 1em;
+    padding: .5em;
+    border: 1px solid $borderColor;
+    &.active1 {
+      background-color: red;
+    }
+  }
+}

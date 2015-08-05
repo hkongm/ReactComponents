@@ -1,0 +1,66 @@
+{
+  "caption" : "互动表格标题",
+  "columns" : ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+  "body" : [
+    [
+      {
+        "text" : "",
+        "status" : 0
+      },
+      {
+        "text" : "",
+        "status" : 0
+      },
+      {
+        "text" : "",
+        "status" : 0
+      },
+      {
+        "text" : "",
+        "status" : 0
+      },
+      {
+        "text" : "",
+        "status" : 0
+      },
+      {
+        "text" : "",
+        "status" : 1
+      },
+      {
+        "text" : "",
+        "status" : 1
+      }
+    ],
+    [
+      {
+        "text" : "",
+        "status" : 0
+      },
+      {
+        "text" : "",
+        "status" : 0
+      },
+      {
+        "text" : "",
+        "status" : 0
+      },
+      {
+        "text" : "",
+        "status" : 0
+      },
+      {
+        "text" : "",
+        "status" : 0
+      },
+      {
+        "text" : "",
+        "status" : 1
+      },
+      {
+        "text" : "",
+        "status" : 1
+      }
+    ]
+  ]
+}
