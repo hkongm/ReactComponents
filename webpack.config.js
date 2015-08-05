@@ -23,6 +23,10 @@ module.exports = {
         loader: 'react-hot!babel'
       },
       {
+        test: /\.json$/,
+        loader: "json"
+      },
+      {
         test: /\.scss$/,
         loader: "style!css!sass?sourceMap"
       }
