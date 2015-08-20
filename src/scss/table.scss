@@ -5,7 +5,7 @@
   @extend .box-center;
   border-collapse: collapse;
   td {
-    border: 1px solid ;
+    border: 1px solid;
     padding: .5em;
   }
   thead,
@@ -15,7 +15,7 @@
   @each $theme, $tab_bd_color, $tab_thead_bgcolor, $tab_tfoot_bgcolor in $table_Theme_List {
     &.#{$theme} {
       tbody > tr:nth-child(even) {
-        background-color: lighten($tab_thead_bgcolor, 1%);
+        background-color: lighten($tab_thead_bgcolor, 10%);
       }
       td {
         border-color: $tab_bd_color;

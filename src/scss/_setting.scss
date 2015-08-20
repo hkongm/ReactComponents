@@ -1,13 +1,25 @@
 @charset "UTF-8";
 
+$primary-color-dark:   #1976D2;
+$primary-color:        #2196F3;
+$primary-color-light:  #BBDEFB;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #FFC107;
+$primary-text-color:   #212121;
+$secondary-text-color: #727272;
+$divider-color:        #B6B6B6;
+
 $baseFontSize:          16px !default;
 $baseLineHeight:        1.5 !default;
 $baseFontFamily:        "Helvetica Neue", Helvetica, Tahoma, sans-serif !default;
 
-$header_Background_Color: #ebebeb;
-$header_Border_Color: #ccc;
+$base_Text_Color: #212121;
 
-$form_text_Color : #333;
+$header_Background_Color: $primary-color;
+$header_Border_Color: $primary-color-dark;
+$header_Text_Color: #FFF;
+
+$form_text_Color : $primary-text-color;
 $form_Border_Color : #ccc;
 $form_InputAddon_Background_Color : #ddd;
 
@@ -26,5 +38,5 @@ $misc_Tag_Text_Color : $form_text_Color;
 // 表格风格预定义
 // 风格名，TD BdColor，Thead BgColor，Tfoot Bgcolor
 $table_Theme_List :
-  (normal, #ccc, #ececec, #ccc),
+  (normal, $primary-color-light, $primary-color-light, $primary-color-light),
   (business, #bebebe, #80b1dc, #bebebe);
