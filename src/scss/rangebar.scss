@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+.range-bar {
+  .bar {
+    position: relative;
+    height: 3px;
+    background-color: #ccc;
+    border-bottom: 1px solid #aaa;
+  }
+  .scale {
+    position: absolute;
+    width: 1px;
+    height: 5px;
+    left: 0;
+    top: -5px;
+    background-color: red;
+  }
+  .min {
+    float: left;
+  }
+  .max {
+    float: right;
+  }
+  .pointer {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    height: 20px;
+    width: 15px;
+    background-color: red;
+  }
+}
